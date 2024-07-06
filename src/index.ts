@@ -1,6 +1,3 @@
-// import { createDebug } from '@bicycle-codes/debug'
-// const debug = createDebug()
-
 export class TextInput extends HTMLElement {
     constructor () {
         super()
@@ -29,20 +26,6 @@ export class TextInput extends HTMLElement {
             <label for=${name}>${displayName}</label>
         </div>`
     }
-
-    // connectedCallback () {
-    //     debug('connected')
-
-    //     const observer = new MutationObserver(function (mutations) {
-    //         mutations.forEach((mutation) => {
-    //             if (mutation.addedNodes.length) {
-    //                 debug('Node added: ', mutation.addedNodes)
-    //             }
-    //         })
-    //     })
-
-    //     observer.observe(this, { childList: true })
-    // }
 }
 
 customElements.define('text-input', TextInput)
