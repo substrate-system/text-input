@@ -12,8 +12,6 @@ A text input web component.
 
 ## install
 
-Installation instructions
-
 ```sh
 npm i -S @substrate-system/text-input
 ```
