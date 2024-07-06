@@ -1,24 +1,59 @@
 text-input {
-    & .input-group {
+    font-family: sans-serif;
+
+    & .input {
+        margin: 1.4rem 0;
         position: relative;
-        width: 100%;
-        margin: 2rem 0;
+
+        & label {
+            color: var(--gray-text, #999999);
+            margin-top: 0;
+            font-size: 1.2rem;
+            position: absolute;
+            pointer-events: none;
+            transition: 0.2s ease all;
+            left: 0.8rem;
+            font-size: 1.2rem;
+        }
 
         & input {
+            border: 2px solid black;
+            border-radius: var(--radius, 4px);
+            padding-bottom: .4rem;
+            padding-top: .5rem;
             font-size: 1.2rem;
             padding: 10px 10px 10px 5px;
             display: block;
+
+            &:focus {
+                &~label {
+                    color: black;
+                    left: 0.5rem;
+                }
+    
+                border-bottom: 2px solid black;
+            }
+
+            &:not(:placeholder-shown)~label {
+                color: black;
+                left: 0.5rem;
+            }
 
             /* this is a hack to fix the input width
             don't know why we need this */
             width: calc(100% - 1rem);
 
-            border: none;
-            border-bottom: 1px solid #757575;
-
             &:focus {
                 outline: none;
-                border-bottom: 4px solid #4285f4;
+            }
+
+            &:focus{
+                &~label {
+                    color: black;
+                    left: 0.5rem;
+                }
+    
+                border-bottom: 2px solid black;
             }
 
             /* When input is...
@@ -27,7 +62,7 @@ text-input {
                 3. NOT valid
             */
             &:invalid:not(:focus):not(:placeholder-shown) {
-                border-bottom: 4px solid var(--text-input-error-border);
+                border-bottom: 4px solid var(--text-input-error-border, red);
 
                 & ~ .requirements {
                     max-height: 200px;
@@ -51,8 +86,8 @@ text-input {
             font-weight: normal;
             position: absolute;
             pointer-events: none;
-            left: 5px;
-            top: 10px;
+            left: 8px;
+            top: 14px;
             transition: 0.2s ease all;
         }
         
@@ -61,10 +96,9 @@ text-input {
         & input:focus ~ label,
         /* float when it's not empty */
         & input:not(:placeholder-shown) ~ label {
-            top: -20px;
+            top: -18px;
             font-size: 14px;
-            /* color: black; */
-            color: #4285f4;
+            color: black;
         }
     }
 }

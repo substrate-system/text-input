@@ -10,7 +10,7 @@ export class TextInput extends HTMLElement {
 
         const classes = (this.getAttribute('class') ?? '').split(' ')
             .concat([
-                'input-group',
+                'input',
                 name
             ])
             .filter(Boolean)
@@ -23,6 +23,7 @@ export class TextInput extends HTMLElement {
                 type=${type || 'text'}
                 placeholder=" "
                 ${getProps(this)}
+                title="${this.getAttribute('title')}"
             />
 
             <label for=${name}>${displayName}</label>
@@ -51,7 +52,6 @@ function getProps (el:HTMLElement) {
         'required',
         'minlength',
         'maxlength',
-        'title',
     ]).reduce((acc, prop) => {
         const attrValue = el.getAttribute(prop)
         if (attrValue === null) return acc

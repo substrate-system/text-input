@@ -1,0 +1,9 @@
+:root {
+    --text-input-error-border: pink;
+}
+
+.input-demo {
+    max-width: 20rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+}

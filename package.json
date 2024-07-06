@@ -1,12 +1,16 @@
 {
-  "name": "@nichoth/example-webcomponent",
-  "private": true,
+  "name": "@substrate-system/text-input",
+  "description": "A text input web component",
   "type": "module",
   "version": "0.0.0",
   "main": "dist/index.js",
   "files": [
     "./dist/*"
   ],
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
   "scripts": {
     "lint": "eslint \"./**/*.{ts,js}\"",
     "build-tests": "esbuild test/index.ts --target=es2020 --bundle --keep-names > test/test-bundle.js",
@@ -17,7 +21,7 @@
     "build-cjs": "esbuild src/*.ts --format=cjs --keep-names --tsconfig=tsconfig.build.json --outdir=./dist --out-extension:.js=.cjs --sourcemap",
     "build-esm": "esbuild src/*.ts --format=esm --metafile=dist/meta.json --keep-names --tsconfig=tsconfig.build.json --outdir=./dist --sourcemap && tsc --emitDeclarationOnly --project tsconfig.build.json --outDir dist",
     "build-esm:min": "esbuild ./src/*.ts --format=esm --keep-names --bundle --tsconfig=tsconfig.build.json --minify --out-extension:.js=.min.js --outdir=./dist --sourcemap",
-    "build-example": "mkdir -p ./public && rm -rf ./public/* && vite --base=\"/example\" build",
+    "build-example": "mkdir -p ./public && rm -rf ./public/* && vite --base=\"/text-input\" build",
     "build-docs": "typedoc --tsconfig tsconfig.build.json ./src/index.ts",
     "build": "mkdir -p ./dist && rm -rf ./dist/* && npm run build-cjs && npm run build-esm && npm run build-esm:min && npm run build-css && npm run build-css:min",
     "start": "vite",
@@ -25,6 +29,22 @@
     "version": "auto-changelog -p --template keepachangelog --breaking-pattern 'BREAKING CHANGE:' && git add CHANGELOG.md",
     "postversion": "git push --follow-tags && npm publish",
     "prepublishOnly": "npm run build"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./*": {
+      "import": [
+        "./dist/*.js",
+        "./dist/*"
+      ],
+      "require": [
+        "./dist/*.cjs",
+        "./dist/*"
+      ]
+    }
   },
   "devDependencies": {
     "@bicycle-codes/debug": "^0.6.8",
@@ -46,22 +66,20 @@
     "typescript": "^5.4.5",
     "vite": "^5.2.11"
   },
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./*": {
-      "import": [
-        "./dist/*.js",
-        "./dist/*"
-      ],
-      "require": [
-        "./dist/*.cjs",
-        "./dist/*"
-      ]
-    }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/substrate-system/text-input.git"
   },
   "author": "nichoth <nichoth@nichoth.com> (https://nichoth.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "text",
+    "input",
+    "web",
+    "component"
+  ],
+  "bugs": {
+    "url": "https://github.com/substrate-system/text-input/issues"
+  },
+  "homepage": "https://github.com/substrate-system/text-input#readme"
 }
