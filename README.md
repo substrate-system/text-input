@@ -39,7 +39,7 @@ import '@substrate-system/text-input/css'
 
 Or minified:
 ```js
-import `@substrate-system/text-input/css/min
+import '@substrate-system/text-input/css/min'
 ```
 
 ### Customize CSS via some variables
