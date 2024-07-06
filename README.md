@@ -8,6 +8,8 @@
 
 A text input web component.
 
+[See a live demo](https://substrate-system.github.io/text-input/).
+
 ## install
 
 Installation instructions
@@ -45,7 +47,7 @@ import '@substrate-system/text-input/css/min'
 ### Customize CSS via some variables
 
 ```css
-:root {
+text-input {
     --text-input-error-border: pink;
     --gray-text: #999999;
     --radius: 4px;
