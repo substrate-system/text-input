@@ -3,6 +3,8 @@ import '../src/index.js'
 import './index.css'
 
 document.body.innerHTML += `
+    <h1>Text Input Demo</h1>
+
     <div class="input-demo">
         <text-input
             display-name="text input component"

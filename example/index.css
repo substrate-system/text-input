@@ -2,8 +2,20 @@
     --text-input-error-border: pink;
 }
 
-.input-demo {
+body {
+    font-family: sans-serif;
+}
+
+.input-demo, h1 {
     max-width: 20rem;
     margin: 0 auto;
     margin-top: 2rem;
+}
+
+h1 {
+    font-size: 1.2rem;
+    border-bottom: 2px solid black;
+    padding-bottom: 0.2rem;
+    max-width: 30rem;
+    margin-bottom: 4rem;
 }

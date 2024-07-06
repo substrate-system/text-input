@@ -44,7 +44,9 @@
         "./dist/*.cjs",
         "./dist/*"
       ]
-    }
+    },
+    "./css": "./dist/style.css",
+    "./css/min": "./dist/style.min.css"
   },
   "devDependencies": {
     "@bicycle-codes/debug": "^0.6.8",

@@ -30,7 +30,19 @@ require('@substrate-system/text-input')
 ```
 
 ## CSS
-Customize CSS via some variables
+
+### Import CSS
+
+```js
+import '@substrate-system/text-input/css'
+```
+
+Or minified:
+```js
+import `@substrate-system/text-input/css/min
+```
+
+### Customize CSS via some variables
 
 ```css
 :root {
@@ -48,6 +60,7 @@ the tag in your HTML.
 ### JS
 ```js
 import '@substrate-system/text-input'
+import '@substrate-system/text-input/css'
 ```
 
 ### HTML
@@ -65,15 +78,41 @@ import '@substrate-system/text-input'
 ```
 
 ### pre-built JS
-This package exposes minified JS files too. Copy them to a location that is
+This package exposes minified files too. Copy them to a location that is
 accessible to your web server, then link to them in HTML.
 
 #### copy
 ```sh
 cp ./node_modules/@substrate-system/text-input/dist/index.min.js ./public/text-input.js
+cp ./node_modules/@substrate-system/text-input/dist/style.min.css ./public/text-input.css
 ```
 
 #### HTML
 ```html
-<script type="module" src="./text-input.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./text-input.css">
+</head>
+
+<body>
+    <!-- use the tag -->
+    <text-input
+        display-name="text input component"
+        title="At least 3 letters, but less than 7"
+        required
+        minlength=3
+        maxlength=7
+        name="text-input"
+    ></text-input>
+
+    <!-- JS -->
+    <script type="module" src="./text-input.js"></script>
+</body>
+</html>
 ```
