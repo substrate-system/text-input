@@ -1,33 +1,65 @@
-import { createDebug } from '@bicycle-codes/debug'
-const debug = createDebug()
+// import { createDebug } from '@bicycle-codes/debug'
+// const debug = createDebug()
 
-export class Example extends HTMLElement {
+export class TextInput extends HTMLElement {
     constructor () {
         super()
+        const name = this.getAttribute('name')!
+        const type = this.getAttribute('type')!
+        const displayName = this.getAttribute('display-name')!
 
-        this.innerHTML = `<div>
-            <p>example</p>
-            <ul>
-                ${Array.from(this.children).filter(Boolean).map(node => {
-                    return `<li>${node.outerHTML}</li>`
-                }).join('')}
-            </ul>
+        const classes = (this.getAttribute('class') ?? '').split(' ')
+            .concat([
+                'input-group',
+                name
+            ])
+            .filter(Boolean)
+            .join(' ')
+
+        this.innerHTML = `<div class="${classes}">
+            <input
+                id=${name}
+                name=${name}
+                type=${type || 'text'}
+                placeholder=" "
+                ${getProps(this)}
+            />
+
+            <label for=${name}>${displayName}</label>
         </div>`
     }
 
-    connectedCallback () {
-        debug('connected')
+    // connectedCallback () {
+    //     debug('connected')
 
-        const observer = new MutationObserver(function (mutations) {
-            mutations.forEach((mutation) => {
-                if (mutation.addedNodes.length) {
-                    debug('Node added: ', mutation.addedNodes)
-                }
-            })
-        })
+    //     const observer = new MutationObserver(function (mutations) {
+    //         mutations.forEach((mutation) => {
+    //             if (mutation.addedNodes.length) {
+    //                 debug('Node added: ', mutation.addedNodes)
+    //             }
+    //         })
+    //     })
 
-        observer.observe(this, { childList: true })
-    }
+    //     observer.observe(this, { childList: true })
+    // }
 }
 
-customElements.define('example-component', Example)
+customElements.define('text-input', TextInput)
+
+function getProps (el:HTMLElement) {
+    const props = ([
+        'required',
+        'minlength',
+        'maxlength',
+        'title',
+    ]).reduce((acc, prop) => {
+        const attrValue = el.getAttribute(prop)
+        if (attrValue === null) return acc
+        // wonky b/c `required` has no value
+        // null means it is absent, empty string means it exists
+        return acc + ` ${prop}${attrValue ? `=${attrValue}` : ''}`
+    }, '')
+
+    return props
+}
+

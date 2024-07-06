@@ -1,3 +1,70 @@
-example-component {
-    background-color: red;
+text-input {
+    & .input-group {
+        position: relative;
+        width: 100%;
+        margin: 2rem 0;
+
+        & input {
+            font-size: 1.2rem;
+            padding: 10px 10px 10px 5px;
+            display: block;
+
+            /* this is a hack to fix the input width
+            don't know why we need this */
+            width: calc(100% - 1rem);
+
+            border: none;
+            border-bottom: 1px solid #757575;
+
+            &:focus {
+                outline: none;
+                border-bottom: 4px solid #4285f4;
+            }
+
+            /* When input is...
+                1. NOT empty
+                2. NOT in focus
+                3. NOT valid
+            */
+            &:invalid:not(:focus):not(:placeholder-shown) {
+                border-bottom: 4px solid var(--text-input-error-border);
+
+                & ~ .requirements {
+                    max-height: 200px;
+                    padding: 0 30px 20px 50px;
+                }
+            }
+        }
+
+        .requirements {
+            padding: 0 30px 0 50px;
+            max-height: 0;
+            transition: 0.28s;
+            overflow: hidden;
+            color: var(--text-input-error-text);
+            font-style: italic;
+        }
+
+        & label {
+            color: #5f5f5f;
+            font-size: 18px;
+            font-weight: normal;
+            position: absolute;
+            pointer-events: none;
+            left: 5px;
+            top: 10px;
+            transition: 0.2s ease all;
+        }
+        
+        /* this part makes the `label` float */
+        /* input:valid ~ label, */
+        & input:focus ~ label,
+        /* float when it's not empty */
+        & input:not(:placeholder-shown) ~ label {
+            top: -20px;
+            font-size: 14px;
+            /* color: black; */
+            color: #4285f4;
+        }
+    }
 }
