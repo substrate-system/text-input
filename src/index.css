@@ -1,8 +1,9 @@
 text-input {
-    font-family: sans-serif;
+    display: block;
+    margin: 1.4rem 0;
 
     & .input {
-        margin: 1.4rem 0;
+        /* margin: 1.4rem 0; */
         position: relative;
 
         & label {

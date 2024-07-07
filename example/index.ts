@@ -14,5 +14,11 @@ document.body.innerHTML += `
             maxlength=7
             name="text-input"
         ></text-input>
+
+        <text-input
+            display-name="another input"
+            required
+            name="another-input"
+        ></text-input>
     </div>
 `
