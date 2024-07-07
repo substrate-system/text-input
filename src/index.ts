@@ -35,10 +35,13 @@ function getProps (el:HTMLElement) {
         'required',
         'minlength',
         'maxlength',
+        'autocomplete',
+        'value',
+        'disabled'
     ]).reduce((acc, prop) => {
         const attrValue = el.getAttribute(prop)
         if (attrValue === null) return acc
-        // wonky b/c `required` has no value
+        // wonky b/c `required` and `disabled` have no value
         // null means it is absent, empty string means it exists
         return acc + ` ${prop}${attrValue ? `=${attrValue}` : ''}`
     }, '')
