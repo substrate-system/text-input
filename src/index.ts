@@ -1,3 +1,10 @@
+// for docuement.querySelector
+declare global {
+    interface HTMLElementTagNameMap {
+        'text-input': TextInput;
+    }
+}
+
 export class TextInput extends HTMLElement {
     constructor () {
         super()
