@@ -75,7 +75,7 @@ text-input {
                 3. NOT valid
             */
             &:invalid:not(:focus):not(:placeholder-shown) {
-                border-bottom: 4px solid var(--text-input-error-border, red);
+                border-color: var(--text-input-error-border, red);
 
                 & ~ .requirements {
                     max-height: 200px;
