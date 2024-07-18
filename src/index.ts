@@ -23,7 +23,8 @@ export class TextInput extends HTMLElement {
 
         const attrs = Array.from(this.attributes)
             .filter(attr => !attr.name.includes('display-name'))
-            .map(attr => attr.name + (attr.value === '' ? '' : '=' + attr.value))
+            .map(attr => attr.name + (attr.value === '' ? '' : '=' +
+                `"${attr.value}"`))
             .join(' ')
 
         const classes = (this.getAttribute('class') ?? '').split(' ')

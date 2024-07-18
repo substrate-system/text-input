@@ -8,6 +8,7 @@ test('text input', async t => {
         </text-input>
 
         <text-input
+            title="testing this input"
             display-name="Example"
             name="example"
             disabled
@@ -28,4 +29,6 @@ test('text input', async t => {
         'should render any arbitrary attributes')
     t.ok(!(example?.getAttribute('display-name')),
         'should filter "display-name" attribute')
+    t.equal(example?.getAttribute('title'), 'testing this input',
+        'should handle attributes with spaces in them')
 })
