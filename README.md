@@ -63,6 +63,10 @@ import '@substrate-system/text-input'
 import '@substrate-system/text-input/css'
 ```
 
+> !NOTE
+> The `name` attribute is used as an `id` also, so it should be unique
+> per page.
+
 ### HTML
 ```html
 <div>

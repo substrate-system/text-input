@@ -1,3 +1,6 @@
+import Debug from '@bicycle-codes/debug'
+const debug = Debug()
+
 // for docuement.querySelector
 declare global {
     interface HTMLElementTagNameMap {
@@ -12,6 +15,17 @@ export class TextInput extends HTMLElement {
         const type = this.getAttribute('type')!
         const displayName = this.getAttribute('display-name')!
 
+        debug(
+            'attributes',
+            Array.from(this.attributes)
+                .map(attr => attr.name + '=' + attr.value)
+        )
+
+        const attrs = Array.from(this.attributes)
+            .filter(attr => !attr.name.includes('display-name'))
+            .map(attr => attr.name + (attr.value === '' ? '' : '=' + attr.value))
+            .join(' ')
+
         const classes = (this.getAttribute('class') ?? '').split(' ')
             .concat([
                 'input',
@@ -22,12 +36,11 @@ export class TextInput extends HTMLElement {
 
         this.innerHTML = `<div class="${classes}">
             <input
+                ${attrs}
                 id=${name}
                 name=${name}
                 type=${type || 'text'}
                 placeholder=" "
-                ${getProps(this)}
-                title="${this.getAttribute('title')}"
             />
 
             <label for=${name}>${displayName}</label>
@@ -36,23 +49,3 @@ export class TextInput extends HTMLElement {
 }
 
 customElements.define('text-input', TextInput)
-
-function getProps (el:HTMLElement) {
-    const props = ([
-        'required',
-        'minlength',
-        'maxlength',
-        'autocomplete',
-        'value',
-        'disabled'
-    ]).reduce((acc, prop) => {
-        const attrValue = el.getAttribute(prop)
-        if (attrValue === null) return acc
-        // wonky b/c `required` and `disabled` have no value
-        // null means it is absent, empty string means it exists
-        return acc + ` ${prop}${attrValue ? `=${attrValue}` : ''}`
-    }, '')
-
-    return props
-}
-

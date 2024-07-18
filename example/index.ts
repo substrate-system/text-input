@@ -21,4 +21,25 @@ document.body.innerHTML += `
             name="another-input"
         ></text-input>
     </div>
+
+    <div>
+        <h2>Demo passing other attributes</h2>
+        <div>Max length of 3</div>
+        <text-input
+            required
+            display-name="Example"
+            maxlength=3
+            name="example"
+        ></text-input>
+    </div>
+
+    <div>
+        <h2>Disabled input</h2>
+        <text-input
+            disabled
+            display-name="Example"
+            maxlength=3
+            name="example-two"
+        ></text-input>
+    </div>
 `

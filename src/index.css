@@ -26,6 +26,18 @@ text-input {
             padding: 10px 10px 10px 5px;
             display: block;
 
+            &:disabled {
+                opacity: 0.4;
+
+                &:hover {
+                    cursor: not-allowed;
+                }
+
+                &~label {
+                    opacity: 0.4;
+                }
+            }
+
             &:focus {
                 &~label {
                     color: black;
