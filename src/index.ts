@@ -1,6 +1,3 @@
-import Debug from '@bicycle-codes/debug'
-const debug = Debug()
-
 // for docuement.querySelector
 declare global {
     interface HTMLElementTagNameMap {
@@ -14,12 +11,6 @@ export class TextInput extends HTMLElement {
         const name = this.getAttribute('name')!
         const type = this.getAttribute('type')!
         const displayName = this.getAttribute('display-name')!
-
-        debug(
-            'attributes',
-            Array.from(this.attributes)
-                .map(attr => attr.name + '=' + attr.value)
-        )
 
         const attrs = Array.from(this.attributes)
             .filter(attr => !attr.name.includes('display-name'))
