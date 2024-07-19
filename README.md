@@ -10,6 +10,8 @@ A text input web component.
 
 [See a live demo](https://substrate-system.github.io/text-input/).
 
+<!-- toc -->
+
 ## install
 
 ```sh
