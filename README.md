@@ -12,6 +12,20 @@ A text input web component.
 
 <!-- toc -->
 
+- [install](#install)
+- [API](#api)
+  * [ESM](#esm)
+  * [Common JS](#common-js)
+- [CSS](#css)
+  * [Import CSS](#import-css)
+  * [Customize CSS via some variables](#customize-css-via-some-variables)
+- [use](#use)
+  * [JS](#js)
+  * [HTML](#html)
+  * [pre-built JS](#pre-built-js)
+
+<!-- tocstop -->
+
 ## install
 
 ```sh
