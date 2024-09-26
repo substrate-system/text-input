@@ -51,7 +51,7 @@
   },
   "devDependencies": {
     "@bicycle-codes/debug": "^0.6.8",
-    "@bicycle-codes/dom": "^0.0.23",
+    "@bicycle-codes/dom": "^0.0.25",
     "@bicycle-codes/tapzero": "^0.10.0",
     "@substrate-system/util": "^0.1.2",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
