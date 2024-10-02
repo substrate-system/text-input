@@ -8,9 +8,14 @@ declare global {
 export class TextInput extends HTMLElement {
     static tag:string = 'text-input'
 
-    constructor () {
-        super()
+    // constructor () {
+    //     super()
+    // }
+
+    connectedCallback () {
         const name = this.getAttribute('name')!
+        if (this.querySelector('input#' + name)) return
+
         const type = this.getAttribute('type')!
         const displayName = this.getAttribute('display-name')!
 

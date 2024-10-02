@@ -51,8 +51,8 @@
   },
   "devDependencies": {
     "@bicycle-codes/debug": "^0.6.8",
-    "@bicycle-codes/dom": "^0.1.0",
-    "@bicycle-codes/tapzero": "^0.10.0",
+    "@bicycle-codes/dom": "^0.1.2",
+    "@bicycle-codes/tapzero": "^0.10.3",
     "@substrate-system/util": "^0.1.2",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
@@ -69,7 +69,7 @@
     "tape-run": "^11.0.0",
     "typedoc": "^0.26.2",
     "typescript": "^5.4.5",
-    "vite": "^5.2.11"
+    "vite": "^5.4.8"
   },
   "repository": {
     "type": "git",
@@ -86,5 +86,5 @@
   "bugs": {
     "url": "https://github.com/substrate-system/text-input/issues"
   },
-  "homepage": "https://github.com/substrate-system/text-input#readme"
+  "homepage": "https://github.com/substrate-system/text-input"
 }
