@@ -7,10 +7,23 @@ declare global {
 
 export class TextInput extends HTMLElement {
     static tag:string = 'text-input'
+    static observedAttributes:string[] = ['disabled']
 
-    // constructor () {
-    //     super()
-    // }
+    /**
+     * Only watching for 'disabled'.
+     */
+    attributeChangedCallback (_name, _oldValue, newValue) {
+        const remove = (
+            newValue === 'false' ||
+            newValue === 'null'
+        )
+
+        if (remove) {
+            this.querySelector('input')?.removeAttribute('disabled')
+        } else {
+            this.querySelector('input')?.setAttribute('disabled', '')
+        }
+    }
 
     connectedCallback () {
         const name = this.getAttribute('name')!
