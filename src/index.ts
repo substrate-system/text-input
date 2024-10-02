@@ -6,6 +6,8 @@ declare global {
 }
 
 export class TextInput extends HTMLElement {
+    tag:string = 'text-input'
+
     constructor () {
         super()
         const name = this.getAttribute('name')!
