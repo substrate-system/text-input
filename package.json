@@ -49,11 +49,11 @@
     "./css": "./dist/style.css",
     "./css/min": "./dist/style.min.css"
   },
+  "dependencies": {},
   "devDependencies": {
-    "@bicycle-codes/debug": "^0.7.2",
-    "@bicycle-codes/dom": "^0.1.2",
-    "@bicycle-codes/tapzero": "^0.10.3",
-    "@substrate-system/util": "^0.1.2",
+    "@substrate-system/debug": "^0.9.52",
+    "@substrate-system/dom": "^0.1.13",
+    "@substrate-system/tapzero": "^0.10.16",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "auto-changelog": "^2.4.0",
