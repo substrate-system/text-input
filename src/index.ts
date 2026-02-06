@@ -35,7 +35,7 @@ export class TextInput extends HTMLElement {
         const displayName = this.getAttribute('display-name')!
 
         const attrs = Array.from(this.attributes)
-            .filter(attr => !attr.name.includes('display-name'))
+            .filter(attr => !attr.name.includes('display'))
             .map(attr => attr.name + (attr.value === '' ? '' : '=' +
                 `"${attr.value}"`))
             .join(' ')
