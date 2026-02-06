@@ -1,3 +1,5 @@
+import { define as _define } from '@substrate-system/web-component/util'
+
 // for docuement.querySelector
 declare global {
     interface HTMLElementTagNameMap {
@@ -60,4 +62,4 @@ export class TextInput extends HTMLElement {
     }
 }
 
-customElements.define('text-input', TextInput)
+_define('text-input', TextInput)
