@@ -12,7 +12,23 @@ A text input web component.
 [See a live demo](https://substrate-system.github.io/text-input/).
 
 <details><summary><h2>Contents</h2></summary>
+
 <!-- toc -->
+
+- [Install](#install)
+- [API](#api)
+  * [ESM](#esm)
+  * [Common JS](#common-js)
+- [CSS](#css)
+  * [Import CSS](#import-css)
+  * [Customize CSS via some variables](#customize-css-via-some-variables)
+- [Use](#use)
+  * [JS](#js)
+  * [HTML](#html)
+  * [pre-built JS](#pre-built-js)
+
+<!-- tocstop -->
+
 </details>
 
 ## Install
