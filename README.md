@@ -1,31 +1,21 @@
 # text input
-![tests](https://github.com/substrate-system/text-input/actions/workflows/nodejs.yml/badge.svg)
+[![tests](https://img.shields.io/github/actions/workflow/status/substrate-system/text-input/nodejs.yml?style=flat-square)](https://github.com/substrate-system/text-input/actions/workflows/nodejs.yml)
 [![types](https://img.shields.io/npm/types/@substrate-system/text-input?style=flat-square)](README.md)
 [![module](https://img.shields.io/badge/module-ESM%2FCJS-blue?style=flat-square)](README.md)
+[![Common Changelog](https://nichoth.github.io/badge/common-changelog.svg)](https://common-changelog.org)
 [![semantic versioning](https://img.shields.io/badge/semver-2.0.0-blue?logo=semver&style=flat-square)](https://semver.org/)
-[![license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![license](https://img.shields.io/badge/license-Big_Time-blue?style=flat-square)](LICENSE)
+
 
 A text input web component.
 
 [See a live demo](https://substrate-system.github.io/text-input/).
 
+<details><summary><h2>Contents</h2></summary>
 <!-- toc -->
+</details>
 
-- [install](#install)
-- [API](#api)
-  * [ESM](#esm)
-  * [Common JS](#common-js)
-- [CSS](#css)
-  * [Import CSS](#import-css)
-  * [Customize CSS via some variables](#customize-css-via-some-variables)
-- [use](#use)
-  * [JS](#js)
-  * [HTML](#html)
-  * [pre-built JS](#pre-built-js)
-
-<!-- tocstop -->
-
-## install
+## Install
 
 ```sh
 npm i -S @substrate-system/text-input
@@ -67,7 +57,7 @@ text-input {
 }
 ```
 
-## use
+## Use
 
 This calls the global function `customElements.define`. Just import, then use
 the tag in your HTML.
